@@ -12,30 +12,6 @@ body {
     margin: 0 auto;
 }
 
-.bayan__name {
-    font-size: 3rem;
-    height: 5rem;
-    border-bottom: 0.15rem solid lightgray;
-}
-
-.bayan__label {
-    cursor: pointer;
-}
-
-.bayan__cat-name {
-    font-size: 1.5rem;
-}
-
-.bayan__image {
-    width: 70%;
-}
-
-.bayan__icon {
-    height: 2rem;
-    width: 2rem;
-    background-size: cover;
-}
-
 .bayan__cats {
     color: blue;
 }
@@ -58,12 +34,18 @@ body {
     opacity: 1;
 }
 
+.bayan__input:checked ~ .bayan__icon {
+    transform: rotate(45deg);
+}
+
+
 .bayan__label {
     padding: 0.5rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    transition: color 600ms;
 }
 
 .bayan__label:active .bayan__image {
@@ -86,4 +68,70 @@ body {
     max-height: 0;
     opacity: 0;
     max-width: 40rem;
+    transform: scale(0.5);
+    transition: transform 600ms, max-height 600ms, opacity 600ms, filter 300ms;
+}
+
+.bayan {
+    width: 40vw;
+}
+
+.bayan__name {
+    font-size: 3rem;
+    height: 5rem;
+    border-bottom: 0.15rem solid lightgray;
+}
+
+.bayan__label {
+    cursor: pointer;
+}
+
+.bayan__cat-name {
+    font-size: 1.5rem;
+}
+
+.bayan__image {
+    width: 70%;
+}
+
+.bayan__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: transform 300ms ease-out, opacity 300ms;
+    opacity: 0;
+}
+
+@media (hover: none) {
+    .bayan__icon {
+        opacity: 1;
+    }
+}
+
+@media (hover: hover) {
+    .bayan__cats:hover .bayan__cat {
+        color: black;
+    }
+
+    .bayan__cats:hover .bayan__icon {
+        opacity: 1;
+    }
+
+    .bayan__cat:hover .bayan__image {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .bayan__cats:hover .bayan__cat {
+        color: black;
+    }
+
+    .bayan__cats:hover .bayan__icon {
+        visibility: visible;
+    }
+
+    .bayan__cat:hover .bayan__image {
+        transform: scale(1);
+        max-height: 200rem;
+        opacity: 1;
+    }
 }
