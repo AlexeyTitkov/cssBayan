@@ -28,16 +28,19 @@ body {
     display: none;
 }
 
+.bayan__input:checked ~ .bayan__icon {
+    transform: rotate(45deg);
+}
+
 .bayan__input:checked ~ .bayan__image {
     transform: scale(1);
     max-height: 100rem;
     opacity: 1;
 }
 
-.bayan__input:checked ~ .bayan__icon {
-    transform: rotate(45deg);
+.bayan__label:active .bayan__icon {
+    filter: invert(50%) sepia(50%);
 }
-
 
 .bayan__label {
     padding: 0.5rem 0;
@@ -56,6 +59,12 @@ body {
     color: black;
 }
 
+.bayan__icon {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 300ms ease-out, opacity 300ms;
+}
+
 .bayan__cat-name {
     display: block;
     width: 60%;
@@ -65,40 +74,71 @@ body {
     display: block;
     width: 60%;
     margin: 0 auto;
+    transform: scale(0.5);
     max-height: 0;
     opacity: 0;
     max-width: 40rem;
-    transform: scale(0.5);
-    transition: transform 600ms, max-height 600ms, opacity 600ms, filter 300ms;
+    background-color: darkgrey;
+    transition: transform 600ms,
+    max-height 600ms,
+    opacity 600ms,
+    filter 300ms;
 }
 
-.bayan {
-    width: 40vw;
+@media (min-width: 820px) {
+    .container {
+        width: 60vw;
+    }
+
+    .bayan__name {
+        font-size: 2.5rem;
+        border-bottom: 0.15rem solid lightgray;
+    }
+
+    .bayan__cat-name {
+        font-size: 1.25rem;
+    }
+
+    .bayan__image {
+        width: 70%;
+    }
+
+    .bayan__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
 }
 
-.bayan__name {
-    font-size: 3rem;
-    height: 5rem;
-    border-bottom: 0.15rem solid lightgray;
-}
+@media (min-width: 1024px) {
+    .bayan {
+        width: 40vw;
+    }
 
-.bayan__label {
-    cursor: pointer;
-}
+    .bayan__name {
+        font-size: 3rem;
+        height: 5rem;
+        border-bottom: 0.15rem solid lightgray;
+    }
 
-.bayan__cat-name {
-    font-size: 1.5rem;
-}
+    .bayan__label {
+        cursor: pointer;
+    }
 
-.bayan__image {
-    width: 70%;
-}
+    .bayan__cat-name {
+        font-size: 1.5rem;
+    }
 
-.bayan__icon {
-    height: 1.5rem;
-    width: 1.5rem;
-    transition: transform 300ms ease-out, opacity 300ms;
-    opacity: 0;
+    .bayan__image {
+        width: 70%;
+    }
+
+    .bayan__icon {
+        height: 2rem;
+        width: 2rem;
+        background-size: cover;
+        transition: transform 300ms ease-out, opacity 300ms;
+        opacity: 0;
+    }
 }
 
 @media (hover: none) {
