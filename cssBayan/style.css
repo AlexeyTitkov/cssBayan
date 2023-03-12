@@ -8,8 +8,13 @@ body {
 }
 
 .bayan {
-    width: 40vw;
+    width: 60vw;
     margin: 0 auto;
+}
+
+.bayan__name {
+    font-size: 1.5rem;
+    border-bottom: 0.15rem solid lightgray;
 }
 
 .bayan__cats {
@@ -18,6 +23,10 @@ body {
 
 .bayan__cat {
     border-bottom: 0.15rem solid lightgray;
+}
+
+.bayan__cat-name {
+    font-size: 0.7rem;
 }
 
 .bayan__label:active .bayan__cat-name {
@@ -61,8 +70,9 @@ body {
 }
 
 .bayan__icon {
-    width: 1rem;
-    height: 1rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-size: cover;
     transition: transform 300ms ease-out, opacity 300ms;
     background-image: url("./assets/plus-icon.png");
 }
@@ -87,13 +97,13 @@ body {
     filter 300ms;
 }
 
-@media (min-width: 820px) {
+@media (min-width: 600px) {
     .container {
         width: 60vw;
     }
 
     .bayan__name {
-        font-size: 2.5rem;
+        font-size: 2rem;
         border-bottom: 0.15rem solid lightgray;
     }
 
@@ -108,22 +118,17 @@ body {
     .bayan__icon {
         width: 1.5rem;
         height: 1.5rem;
+        background-size: cover;
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
     .bayan {
-        width: 40vw;
+        width: 50vw;
     }
 
     .bayan__name {
         font-size: 3rem;
-        height: 5rem;
-        border-bottom: 0.15rem solid lightgray;
-    }
-
-    .bayan__label {
-        cursor: pointer;
     }
 
     .bayan__cat-name {
@@ -135,8 +140,8 @@ body {
     }
 
     .bayan__icon {
-        height: 2rem;
-        width: 2rem;
+        height: 1.8rem;
+        width: 1.8rem;
         background-size: cover;
         transition: transform 300ms ease-out, opacity 300ms;
         opacity: 0;
@@ -175,5 +180,9 @@ body {
         transform: scale(1);
         max-height: 200rem;
         opacity: 1;
+    }
+
+    .bayan__label {
+        cursor: pointer;
     }
 }
